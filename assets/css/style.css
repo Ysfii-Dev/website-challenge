@@ -1,0 +1,203 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    color: #2b2a2a;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#wrapper{
+    width: min(1200px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background-color: #fafafa;
+}
+#header{
+    width: min(1200px, 100%);
+    height: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    background-image: linear-gradient(to right, #125b07, #208511);
+    box-shadow: 0px 0px 10px -4px #000;
+    color: #fff;
+    z-index: 999;
+}
+#brand{
+    height: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5px;
+    align-items: center;
+}
+#brand .img{
+    width: 40px;
+    height: 40px;
+    background-image: url("./../images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#brand .brand-text{
+    line-height: 1;
+}
+
+#brand .brand-big{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.8px;
+}
+#brand .brand-small{
+    font-size: 0.8rem;
+}
+#menu{
+    height: 50px;
+} 
+#menu ul{
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+}
+#menu li a {
+    padding: 5px 15px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+#menu ul a:hover{
+    filter: drop-shadow(0px 0px 5px #000);
+}
+#body{
+    margin-top: 35px;
+    padding: 15px;
+    overflow-x: hidden;
+    text-align: justify;
+}
+#footer{
+    background-color: #111702;
+    color: #fff;
+    font-weight: lighter;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-3 > div{
+    padding: 15px;
+}
+.grid-title{
+    font-weight: bold;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 5px;
+}
+#credits{
+    padding: 15px;
+    text-align: center;
+    background-color: #000;
+}
+
+@media (max-width: 768px) { 
+    #header {
+        height: auto;
+    }
+    #brand .img {
+        width: 30px;
+        height: 30px;
+    }
+    #brand .brand-big {
+        font-size: 1rem;
+    }
+    #brand .brand-small {
+        font-size: 0.7rem;
+    }
+    #menu-bar {
+        cursor: pointer;
+        padding: 15px;
+    } 
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px auto;
+        transition: 0.4s ease; 
+        display: block;
+    }
+    #bar1 {
+        transform: translateY(-4px);
+    }
+    #bar3 {
+        transform: translateY(4px);
+    }
+    #menu {
+        position: absolute;
+        top: 59px;
+        right: -100%;
+        background-color: rgba(32, 133, 17, 0.9);
+        border-radius: 25px 0;
+        width: 40%;
+        height: 100vh;
+        z-index: 1;
+        clip-path: inset(0 -100vmax);
+        transition: .5s;
+    }
+    #menu ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    #menu ul li {
+        border-radius: 30px 0 0 30px;
+        padding: 20px 15px;
+        transition: background-color .3s ease;
+    }
+    #menu ul li:hover {
+        background-color: #125b07;
+        filter: drop-shadow(0 0 10 #000);
+    }
+
+    #menu.change {
+        right: 0;
+        box-shadow: 0px 0px 0px 100vmax rgba(0, 0, 0, 0.4);
+    }
+    .change #bar1 {
+        transform: translateY(10px) rotateZ(-45deg);
+    } 
+    .change #bar2 {
+        opacity: 0;
+    } 
+    .change #bar3 {
+        transform: translateY(-5px) rotateZ(45deg);
+    }
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-3 > div {
+        padding: 15px;
+    }
+}
+@media (max-width: 576px){
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
