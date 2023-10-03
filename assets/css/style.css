@@ -141,10 +141,10 @@ body {
         display: block;
     }
     #bar1 {
-        transform: translateY(-4px);
+        transform: translateY(-5px);
     }
     #bar3 {
-        transform: translateY(4px);
+        transform: translateY(5px);
     }
     #menu {
         position: absolute;
@@ -185,7 +185,7 @@ body {
         opacity: 0;
     } 
     .change #bar3 {
-        transform: translateY(-5px) rotateZ(45deg);
+        transform: translateY(-6px) rotateZ(45deg);
     }
     .grid-3 {
         grid-template-columns: repeat(2, 1fr);
